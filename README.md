@@ -34,6 +34,36 @@ The first call in the system at any interrupt is the CPU, then the Function with
 104,976 CPUs=121,439,531,096,594,251,776 Total addressable functions
 and the limits go higher with respect to the BlockGen.
 
-By default the system will consist of application specific coprocessors starting with the Gateway, its purpose is similar to the traditional CPU in that is traffics information and streamlines a default set of integrated functions.
+By default the system will consist of application specific coprocessors starting with the Gateway, its purpose is similar to the traditional CPU in that it traffics information and streamlines a default set of integrated functions.
+
+:GhostIO
+Traditionally when a bit of data is erased, it is either ignored or overwritten. In this case, values are literally recycled in contrast to the recycle bin in window's operating systems. With GhostIO there is an input and an output, essentially being the equivelant of nul and rand, but in this case when data is sent to nul it is pooled along with other sources such as the Random Signal Generator. All input is osbfuscated and perplexed the result is a feedback loop between Nul and Rand or the Input and Output of the GhostIO, resulting in true noise. Each CPU will contain its own unique RandomSignalGenerator and the output will be pooled along with the other sources in the Gateway's GhostIO. Each CPU can either pull Infinity from either the central GhostIO or via it's own internal source but not of that elsewhere. The idea of having a central pool for infinity and localized counter points is to bring out a better reference points of entropy via different points in space/time. Not 100% nessicary at the current stage of development, but in the future it will be essential in terms of AI.
+
+:Initialization process
+THe the machine is first powered up the Gateway and all coprocessors will put themselves in an idle listening state. The gateway will respond to only BootBlock Functions. Which is called using a simple instruction: 0000.0000.0000.0000, or Gateway.BootBlock.Bootstrap.Default
+
+The Gateway then initializes its internals, and finally the VAT Bus. The Gateway then requests the CPUs to init themselves by sending them the bootstrap instruction, when the CPU beings to stream its RSG the GhostIO will initialize a feedback loop of noise to the CPU.
+At this point the CPU is idle and ready.
+
+:The Gateway
+The gateway provides the basic functionality to implement an operating system such as BlockOS which would be equivelant to BIOS/UEFI in traditional-modern systems.
+The Gateway has several internal functions such as arithmitec, cache, volatale, and non-volitale storage.
+0000.BootBlock
+0001.Query
+0002.Math
+0003.VS
+0004.NVS
+0005.GhostIO
+0006.vCPU
+etc...
+Now these functions are alpha and merely serve as an example, but the order, and the number of base functions has yet to be determined.
+
+VirtualCPUs:
+The gateway has the ability to define and process 16 unique software processors, each with their own RSG in addition to the others.
+Each psyhical CPU can either be a 100% firmware blank, or be an application-specifically designed one.
+This is where the vCPUs come in. A vCPU will act just like a physical one. For example, an x86 VM operating in BlockGen 2 could be implemented operating like an Intel processor. vCPUs can be used for development in production CPU models as well. The concept behind such a system would appear to be a never before seen computer architecture, setup, and layout, and run your favorite distro, or even windows but also be able to handle massive throughput due to operating on a Base 18 processor rather than a binary one.
+
+:Other
+Another point to add is the clock speed, the rate at which such a system could transfer data is exponentional due to the density of data that can be represented in a single unit.
 
 To be continued...
